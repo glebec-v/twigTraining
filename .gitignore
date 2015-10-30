@@ -1,5 +1,5 @@
 .idea/
 vendor/
-cache/
+cache/.
 composer.lock
 composer.phar
