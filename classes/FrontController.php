@@ -18,10 +18,11 @@ class FrontController
         $request = $_SERVER['REQUEST_URI'];
         $splits = explode('/', trim($request, '/'));
         $this->_controller = !empty($splits[0]) ? ucfirst($splits[0]).'Controller' : 'IndexController';
-        $this->_action = !empty($splits[1]) ? ucfirst($splits[1]).'Action' : 'indexAction';
-        if (!empty($splits[2])){
+        $this->_action = !empty($splits[1]) ? $splits[1].'Action' : 'indexAction';
+
+        $count = count($splits);
+        if (!empty($splits[2]) && ($count % 2 == 0)){
             $keys = $values = [];
-            $count = count($splits);
             for ($i = 2; $i < $count; $i++){
                 if ($i % 2 == 0){
                     $keys[] = $splits[$i];
@@ -29,14 +30,34 @@ class FrontController
                     $values[] = $splits[$i];
                 }
             }
+            //todo проработать вариант неполного списка параметров и значений, нечетное число >= 3
             $this->_params = array_combine($keys, $values);
         }
     }
 
-    public function route(){}
-    public function getParams(){}
-    public function getController(){}
-    public function getAction(){}
-    public function getBody(){}
-    public function setBody($body){}
+    public function route()
+    {
+        if (class_exists($this->getController())){
+            $reflection = new ReflectionClass($this->getController());
+            if ($reflection->implementsInterface('IController')){
+                if ($reflection->hasMethod($this->getAction())){
+                    $controller = $reflection->newInstance();
+                    $method = $reflection->getMethod($this->getAction());
+                    $method->invoke($controller);
+                }else{
+                    throw new Exception('Missing Action');
+                }
+            }else{
+                throw new Exception('Missing Interface');
+            }
+        }else{
+            throw new Exception('Missing Controller');
+        }
+
+    }
+    public function getParams()     { return $this->_params; }
+    public function getController() { return $this->_controller; }
+    public function getAction()     { return $this->_action; }
+    public function getBody()       { return $this->_body; }
+    public function setBody($body)  { $this->_body = $body; }
 }

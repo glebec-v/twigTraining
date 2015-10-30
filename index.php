@@ -6,9 +6,7 @@ spl_autoload_register(function ($class) {
     include 'classes/'.$class.'.php';
 });
 
-$loader = new Twig_Loader_Filesystem(__DIR__.'/views');
-$twig = new Twig_Environment($loader, ['cache' => false]);
-
 $front = FrontController::getInstance();
+$front->route();
 
-echo $twig->render('homepage.html', ['message' => 'Привет чувак!']);
+echo $front->getBody();
