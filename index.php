@@ -18,6 +18,14 @@ switch($request){
         echo $twig->render('about.html', ['message' => 'О нас']);
         break;
     case '/products':
-        echo $twig->render('products.html', ['message' => 'Наши изделия']);
+        echo $twig->render('products.html',
+            ['items' => [
+                '300i' => 'Text about 300i',
+                '315p' => 'Explorer 315p',
+                '325a' => 'Luxury interceptor',
+                '350r' => 'Racing',
+                'M50' => 'Fastest interceptor',
+                '890Jump' => 'Luxury luxury luxury'
+        ]]);
 }
 

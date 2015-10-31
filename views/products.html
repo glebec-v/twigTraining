@@ -1,7 +1,11 @@
 {% extends '_inner.html'%}
+
 {% block title%}
-Origin Jumpworks Products
+    Origin Jumpworks Products
 {% endblock %}
+
 {% block content%}
-{{ message }}
+    {% for item, value in items %}
+        {% include 'element.html' %}
+    {% endfor %}
 {% endblock %}
