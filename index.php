@@ -10,6 +10,7 @@ $twig = new Twig_Environment($loader, ['cache' => false]);
 
 $request = $_SERVER['REQUEST_URI'];
 switch($request){
+    case '/':
     case '/home':
         echo $twig->render('homepage.html', ['message' => 'Привет чувак!']);
         break;
