@@ -1,8 +1,12 @@
 <?php
 require __DIR__.'/vendor/autoload.php';
 
-$loader = new Twig_Loader_Filesystem(__DIR__.'/views');
+$loader = new Twig_Loader_Filesystem([
+    __DIR__.'/views',
+    __DIR__.'/views/layouts'
+]);
 $twig = new Twig_Environment($loader, ['cache' => false]);
+
 
 $request = $_SERVER['REQUEST_URI'];
 switch($request){
@@ -15,8 +19,4 @@ switch($request){
     case '/products':
         echo $twig->render('products.html', ['message' => 'Наши изделия']);
 }
-/*
-if ($request == '/home'){
-    echo $twig->render('homepage.html', ['message' => 'Привет чувак!']);
-}
-*/
+
