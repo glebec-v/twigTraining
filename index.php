@@ -6,6 +6,7 @@ $twig = new Twig_Environment($loader, ['cache' => false]);
 
 $request = $_SERVER['REQUEST_URI'];
 switch($request){
+    case '/':
     case '/home':
         echo $twig->render('homepage.html', ['message' => 'Привет чувак!']);
         break;
@@ -15,8 +16,3 @@ switch($request){
     case '/products':
         echo $twig->render('products.html', ['message' => 'Наши изделия']);
 }
-/*
-if ($request == '/home'){
-    echo $twig->render('homepage.html', ['message' => 'Привет чувак!']);
-}
-*/
