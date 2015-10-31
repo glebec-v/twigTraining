@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Twig Test</title>
-</head>
-<body>
-    <h1>{{ message }}</h1>
-</body>
-</html>
+{% extends '_inner.html'%}
+{% block title%}
+Origin Jumpworks
+{% endblock %}
+{% block content%}
+{{ message }}
+{% endblock %}
