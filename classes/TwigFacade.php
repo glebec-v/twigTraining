@@ -12,6 +12,4 @@ class TwigFacade
         }
         return self::$instance;
     }
-
-    protected function __construct(){}
 }
