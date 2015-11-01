@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Twig Test</title>
-</head>
-<body>
-    <h1>{{ message }}</h1>
-</body>
-</html>
+{% extends '_inner.html'%}
+
+{% block title%}
+    Origin Jumpworks Products
+{% endblock %}
+
+{% block content%}
+<div class="container">
+    <div class="divPanel page-content">
+        <div class="row-fluid">
+            <h1>Get your ship</h1>
+            {% for item in storage %}
+                {% include 'element.html' %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

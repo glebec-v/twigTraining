@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Twig Test</title>
-</head>
-<body>
-    <h1>{{ message }}</h1>
-</body>
-</html>
+{% extends '_main.html'%}
+{% block title%}
+    Origin Jumpworks
+{% endblock %}
+{% block content%}
+<div class="container">
+    <div class="divPanel page-content">
+        <div class="row-fluid">
+            <div class="span3">
+                <h2>Design in law</h2>
+                <img class="img-polaroid pull-right" src="/views/pics/home1.png"/>
+                <p>{{ content.one }}</p>
+            </div>
+            <div class="span3">
+                <h2>Looks that can kill</h2>
+                <img class="img-polaroid pull-right" src="/views/pics/home2.png"/>
+                <p>{{ content.two }}</p>
+            </div>
+            <div class="span3">
+                <h2>Your ship is your character</h2>
+                <img class="img-polaroid pull-right" src="/views/pics/home3.png"/>
+                <p>{{ content.three }}</p>
+            </div>
+            <div class="span3">
+                <h2>We have your back</h2>
+                <img class="img-polaroid pull-right" src="/views/pics/home4.png"/>
+                <p>{{ content.four }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
