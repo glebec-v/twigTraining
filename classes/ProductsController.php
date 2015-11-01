@@ -6,7 +6,9 @@ class ProductsController implements IController
     {
         $fc = FrontController::getInstance();
         $twig = TwigFacade::getInstance();
-        $result = $twig->render('products.html', ['message' => 'Наши услуги']);
+        $data = DataProvider::getInstance();
+        $storage = $data->getProducts();
+        $result = $twig->render('products.html', ['storage' => $storage]);
         $fc->setBody($result);
     }
 }

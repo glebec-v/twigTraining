@@ -6,7 +6,9 @@ class IndexController implements IController
     {
         $fc = FrontController::getInstance();
         $twig = TwigFacade::getInstance();
-        $result = $twig->render('homepage.html', ['message' => 'Привет чувак!']);
+        $data = DataProvider::getInstance();
+        $content = $data->getHome();
+        $result = $twig->render('homepage.html', ['content' => $content]);
         $fc->setBody($result);
     }
 }
