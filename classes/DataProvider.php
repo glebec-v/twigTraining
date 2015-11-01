@@ -11,10 +11,10 @@ class DataProvider
 
     public static function getInstance()
     {
-        if (!(self::$_instance instanceof self)){
-            self::$_instance = new self();
+        if (!(self::$instance instanceof self)){
+            self::$instance = new self();
         }
-        return self::$_instance;
+        return self::$instance;
     }
 
     protected function __construct()
