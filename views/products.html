@@ -5,7 +5,14 @@
 {% endblock %}
 
 {% block content%}
-    {% for item, value in items %}
-        {% include 'element.html' %}
-    {% endfor %}
+<div class="container">
+<div class="divPanel page-content">
+    <div class="row-fluid">
+        <h1>Get your ship</h1>
+        {% for item in storage %}
+            {% include 'element.html' %}
+        {% endfor %}
+    </div>
+</div>
+</div>
 {% endblock %}
