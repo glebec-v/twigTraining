@@ -1,7 +1,15 @@
 {% extends '_inner.html'%}
 {% block title%}
-Origin Jumpworks
+    Origin Jumpworks
 {% endblock %}
 {% block content%}
-{{ message }}
+    <div class="container">
+        <div class="divPanel page-content">
+            <div class="row-fluid">
+                <h1>{{ header }}</h1>
+                <img class="img-polaroid pull-right" src="{{ pic }}"/>
+                <p>{{ text }}</p>
+            </div>
+        </div>
+    </div>
 {% endblock %}
