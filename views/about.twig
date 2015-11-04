@@ -1,4 +1,4 @@
-{% extends '_inner.html'%}
+{% extends '_inner.twig'%}
 {% block title%}
     Origin Jumpworks
 {% endblock %}
@@ -6,10 +6,11 @@
     <div class="container">
         <div class="divPanel page-content">
             <div class="row-fluid">
-                <h1>{{ header }}</h1>
-                <img class="img-polaroid pull-right" src="{{ pic }}"/>
-                <p>{{ text }}</p>
+                <h1>{{ content.header }}</h1>
+                <img class="img-polaroid pull-right" src="{{ content.pic }}"/>
+                <p>{{ content.text }}</p>
             </div>
         </div>
     </div>
 {% endblock %}
+
