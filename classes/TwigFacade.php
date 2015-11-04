@@ -4,7 +4,7 @@ class TwigFacade
 {
     static $instance;
 
-    public static function getInstance()
+    public static function create()
     {
         if (!(self::$instance instanceof self)){
             $loader = new Twig_Loader_Filesystem([

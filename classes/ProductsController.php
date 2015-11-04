@@ -6,7 +6,7 @@ class ProductsController implements IController
 
     public function __construct()
     {
-        $this->twig = TwigFacade::getInstance();
+        $this->twig = TwigFacade::create();
         $this->data = DataProvider::getInstance();
         $this->fc = FrontController::getInstance();
     }
