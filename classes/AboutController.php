@@ -8,7 +8,7 @@ class AboutController implements IController
         $twig = TwigFacade::getInstance();
         $data = DataProvider::getInstance();
         $content = $data->getAbout();
-        $result = $twig->render('about.html', ['content' => $content]);
+        $result = $twig->render('about.twig', ['content' => $content]);
         $fc->setBody($result);
     }
 }

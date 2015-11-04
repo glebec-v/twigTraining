@@ -1,4 +1,4 @@
-{% extends '_inner.html'%}
+{% extends '_inner.twig'%}
 
 {% block title%}
     Origin Jumpworks Products
@@ -10,7 +10,7 @@
         <div class="row-fluid">
             <h1>Get your ship</h1>
             {% for item in storage %}
-                {% include 'element.html' %}
+                {% include 'element.twig' %}
             {% endfor %}
         </div>
     </div>
