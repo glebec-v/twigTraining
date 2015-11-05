@@ -6,7 +6,7 @@
     <p>
         {{ item.description[:100] }}...
     </p>
-    <p>Production started at {{ item.dateProduction | date('Y') }}</p>
+    <p>Sales started at {{ item.dateProduction | date('Y') }}</p>
     <a class="btn btn-large btn-primary" href="/products/show/id/{{ item.id }}">View details</a>
 </div>
 
