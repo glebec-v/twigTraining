@@ -1,0 +1,11 @@
+{% macro get(items) %}
+    {% for item in items %}
+        {% set separator = ',' %} {# честно говоря, запятая тут не очень уместна по дизайну#}
+        {% if loop.last %}
+            {% set separator = '' %}
+        {% endif %}
+        <a href="#">
+            <span class="label label-default">{{ item }}{{ separator }}</span> {# но красоту можно и убрать, тогда запятая нужна#}
+        </a>
+    {% endfor %}
+{% endmacro %}

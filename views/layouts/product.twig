@@ -1,9 +1,10 @@
 <div class="span12">
     <h2>{{ item.type }}</h2>
-    <div class="span8">
+    <div class="span6">
         <img class="img-polaroid" src="{{ item.image }}" alt="{{ item.name }}" title="{{ item.name }}"/>
-
     </div>
-    <p>{{ item.description }}</p>
-    <a class="btn btn-large btn-primary" href="#">Order now!</a>
+    <div class="span4">
+        <p>{{ item.description }}</p>
+        <a class="btn btn-large btn-primary" href="#">Order now!</a>
+    </div>
 </div>

@@ -1,10 +1,12 @@
+{% import 'tags.macro.twig' as output %}
 <div class="span5">
-    <h2>{{ item.name }}</h2>
-    <h5>{{ item.type }}</h5>
+    <h2>{{ item.name }} {{ item.type }}</h2>
+    <h5>Tags: {{ output.get(item.tags) }}</h5>
     <img class="img-polaroid" src="{{ item.image }}" alt="{{ item.name }}" title="{{ item.name }}"/>
     <p>
-        {{ item.description }}
+        {{ item.description[:100] }}...
     </p>
+    <p>Production started at {{ item.dateProduction | date('Y') }}</p>
     <a class="btn btn-large btn-primary" href="/products/show/id/{{ item.id }}">View details</a>
 </div>
 

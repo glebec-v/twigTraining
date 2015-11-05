@@ -1,5 +1,5 @@
 {% extends '_inner.twig'%}
-
+{% import 'tags.macro.twig' as output %}
 {% block title%}
     Origin Jumpworks {{ item.name | title }}
 {% endblock %}
@@ -9,8 +9,8 @@
         <div class="divPanel page-content">
             <div class="row-fluid">
                 <h1>{{ item.name }}</h1>
-                <h5>Tags here</h5>
-                <p>Item information</p>
+                <p>Sales started at {{ item.dateProduction | date('d.m.Y') }}</p>
+                <h5>Tags: {{ output.get(item.tags) }}</h5>
                 {% include 'product.twig' %}
             </div>
         </div>
