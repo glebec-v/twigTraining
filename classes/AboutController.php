@@ -1,14 +1,12 @@
 <?php
 
-class AboutController implements IController
+class AboutController extends Controller implements IController
 {
+
     public function indexAction()
     {
-        $fc = FrontController::getInstance();
-        $twig = TwigFacade::create();
-        $data = DataProvider::getInstance();
-        $content = $data->getAbout();
-        $result = $twig->render('about.twig', ['content' => $content]);
-        $fc->setBody($result);
+        $content = $this->data->getAbout();
+        $result = $this->twig->render('about.twig', ['content' => $content]);
+        $this->fc->setBody($result);
     }
 }

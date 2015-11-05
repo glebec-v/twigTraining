@@ -1,16 +1,7 @@
 <?php
 
-class ProductsController implements IController
+class ProductsController extends Controller implements IController
 {
-    protected $twig, $data, $fc;
-
-    public function __construct()
-    {
-        $this->twig = TwigFacade::create();
-        $this->data = DataProvider::getInstance();
-        $this->fc = FrontController::getInstance();
-    }
-
     public function indexAction()
     {
         $storage = $this->data->getProducts();

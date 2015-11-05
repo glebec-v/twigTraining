@@ -1,14 +1,11 @@
 <?php
 
-class IndexController implements IController
+class IndexController extends Controller implements IController
 {
     public function indexAction()
     {
-        $fc = FrontController::getInstance();
-        $twig = TwigFacade::create();
-        $data = DataProvider::getInstance();
-        $content = $data->getHome();
-        $result = $twig->render('homepage.twig', ['content' => $content]);
-        $fc->setBody($result);
+        $content = $this->data->getHome();
+        $result = $this->twig->render('homepage.twig', ['content' => $content]);
+        $this->fc->setBody($result);
     }
 }
