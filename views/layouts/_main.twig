@@ -142,21 +142,19 @@
                             <i class="general foundicon-phone icon"></i>
                             <span class="field">Comm-link:</span>
                             <br />
-                            (56123) 456 7890 355 / 456 7891 478
+                            {{ config.contacts.comm }}
                         </li>
                         <li>
                             <i class="general foundicon-mail icon"></i>
                             <span class="field">Email:</span>
                             <br />
-                            <a href="mailto:info@originjumpworks.com" title="Email">info@originjumpworks.com</a>
+                            <a href="mailto:info@originjumpworks.com" title="Email">{{ config.contacts.email }}</a>
                         </li>
                         <li>
                             <i class="general foundicon-home icon" style="margin-bottom:50px"></i>
                             <span class="field">Address: Marketing Dept.</span>
                             <br />
-                            3245 N 467th Street<br />
-                            Terra Prime<br />
-                            Terra
+                            {{ config.contacts.address|raw }}
                         </li>
                     </ul>
 

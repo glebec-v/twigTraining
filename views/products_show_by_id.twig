@@ -1,7 +1,7 @@
 {% extends '_inner.twig'%}
 {% import 'tags.macro.twig' as output %}
-{% block title%}
-    Origin Jumpworks {{ item.name | title }}
+{% block title %}
+    {{ config.title }} {{ item.name | title }}
 {% endblock %}
 
 {% block content%}
