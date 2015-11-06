@@ -1,6 +1,6 @@
 <?php
 
-class JumpWorks_Extention extends Twig_Extension
+class JumpWorks_Extension extends Twig_Extension
 {
     public function getName()
     {

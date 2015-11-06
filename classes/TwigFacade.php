@@ -13,7 +13,7 @@ class TwigFacade
                 __DIR__.'/../views/macro'
             ]);
             self::$instance = new Twig_Environment($loader, ['cache' => false]);
-            self::$instance->addExtension(new JumpWorks_Extention());
+            self::$instance->addExtension(new JumpWorks_Extension());
         }
         return self::$instance;
     }
