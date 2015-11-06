@@ -18,7 +18,11 @@ class ProductsController extends Controller implements IController
         }else{
             $item = null;
         }
-        $result = $this->twig->render('products_show_by_id.twig', ['item' => $item]);
+        $storage = $this->data->getProducts();
+        $result = $this->twig->render('products_show_by_id.twig', [
+            'item' => $item,
+            'storage' => $storage
+        ]);
         $this->fc->setBody($result);
     }
 }
