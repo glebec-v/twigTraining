@@ -16,6 +16,14 @@ class DataProvider
         }
         return $this->products->current();
     }
+    public function getCurrencyRate()
+    {
+        return [
+            'UEC' => 1,         // UEE
+            'CREY' => 62.34,    // Xi'an
+            'Taernin' => 74.13  // Banu
+        ];
+    }
 
     public static function getInstance()
     {
@@ -119,6 +127,7 @@ class DataProvider
         $ship_300i->tags = ['touring', 'OnePerson', 'Omnisky VI', 'AllStop'];
         $ship_300i->dateProduction = date_create('12/23/2941');
         $ship_300i->name = '300i';
+        $ship_300i->price = 349000; // in UEC
         $ship_300i->type = 'common';
         $ship_300i->image = '/views/pics/300i_beauty_visual.jpg';
         $ship_300i->description = 'The 300i touring model is the premiere spacecraft hull on the market today. A true
@@ -128,6 +137,7 @@ class DataProvider
         $ship_315p->tags = ['exploration', 'OnePerson', 'Omnisky VI', 'AllStop', 'JumpEngine', 'JumpScanner'];
         $ship_315p->dateProduction = date_create('01/17/2943');
         $ship_315p->name = '315p';
+        $ship_315p->price = 429000; // in UEC
         $ship_315p->type = 'exploration';
         $ship_315p->image = '/views/pics/315p_flight_visual.jpg';
         $ship_315p->description = 'Exploration is man’s highest calling. Prepare to chart distant horizons with man’s most sophisticated piece of technology,
@@ -137,6 +147,7 @@ class DataProvider
         $ship_325a->tags = ['interdiction', 'OnePerson', 'Omnisky VI', 'ForceWall', 'Custom weapon system'];
         $ship_325a->dateProduction = date_create('04/07/2942');
         $ship_325a->name = '325a';
+        $ship_325a->price = 449000; // in UEC
         $ship_325a->type = 'interdiction';
         $ship_325a->image = '/views/pics/325a_front-Right_visual.jpg';
         $ship_325a->description = 'It’s a dangerous universe out there. Be the arbiter of your fate with the combat-enhanced ORIGIN 325a. Just because it’s a rough
@@ -146,6 +157,7 @@ class DataProvider
         $ship_M50->tags = ['racing', 'interception', 'OnePerson', 'AllStop FR'];
         $ship_M50->dateProduction = date_create('11/10/2942');
         $ship_M50->name = 'M50';
+        $ship_M50->price = 398000; // in UEC
         $ship_M50->type = 'racing, interceptor';
         $ship_M50->image = '/views/pics/M50_comp52.jpg';
         $ship_M50->description = 'If you want to get from point A to point B as quickly as possible and with as much style as
@@ -155,6 +167,7 @@ class DataProvider
         $ship_890J->tags = ['touring', 'luxury', 'MultiPerson', 'JumpEngine', 'InnerShip'];
         $ship_890J->dateProduction = date_create('10/29/2943');
         $ship_890J->name = '890 Jump';
+        $ship_890J->price = 3990000; // in UEC
         $ship_890J->type = 'Luxury touring';
         $ship_890J->image = '/views/pics/890_Beautyshot-World_v01_NF_140925.jpg';
         $ship_890J->description = 'With an elegant, sleek exterior that belies its spacious interior, the 890 Jump is a true
@@ -168,6 +181,5 @@ class DataProvider
         $this->products->attach($ship_325a);
         $this->products->attach($ship_M50);
         $this->products->attach($ship_890J);
-
     }
 }
