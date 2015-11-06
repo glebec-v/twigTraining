@@ -11,16 +11,16 @@
     <div class="container" style="margin-top: 10px"></div>
     <div class="container">
             <span class="alert-success" style="font-size: x-large">{{ item.price|number_format(
-                    decimal=2,
+                    decimal=0,
                     decimal_point='.',
                     thousand_sep=' '
                 ) }} UEC</span>
-            <span class="alert-info">{{ item.price|number_format(
+            <span class="alert-info">{{ item.price|currencyExchange(rate.crey)|number_format(
                     decimal=2,
                     decimal_point='.',
                     thousand_sep=' '
-                ) }} GREY</span>
-            <span class="alert-info">{{ item.price|number_format(
+                ) }} CREY</span>
+            <span class="alert-info">{{ item.price|currencyExchange(rate.taernin)|number_format(
                 decimal=2,
                 decimal_point='.',
                 thousand_sep=' '

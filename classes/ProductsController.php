@@ -5,7 +5,11 @@ class ProductsController extends Controller implements IController
     public function indexAction()
     {
         $storage = $this->data->getProducts();
-        $result = $this->twig->render('products.twig', ['storage' => $storage]);
+        $rate = $this->data->getCurrencyRate();
+        $result = $this->twig->render('products.twig', [
+            'storage' => $storage,
+            'rate' => $rate
+        ]);
         $this->fc->setBody($result);
     }
 
@@ -19,9 +23,11 @@ class ProductsController extends Controller implements IController
             $item = null;
         }
         $storage = $this->data->getProducts();
+        $rate = $this->data->getCurrencyRate();
         $result = $this->twig->render('products_show_by_id.twig', [
             'item' => $item,
-            'storage' => $storage
+            'storage' => $storage,
+            'rate' => $rate
         ]);
         $this->fc->setBody($result);
     }

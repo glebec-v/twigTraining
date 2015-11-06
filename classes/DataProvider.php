@@ -20,8 +20,8 @@ class DataProvider
     {
         return [
             'UEC' => 1,         // UEE
-            'CREY' => 62.34,    // Xi'an
-            'Taernin' => 74.13  // Banu
+            'crey' => 62.34,    // Xi'an
+            'taernin' => 102.00   // Banu
         ];
     }
 

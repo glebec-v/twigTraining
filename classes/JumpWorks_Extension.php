@@ -20,4 +20,14 @@ class JumpWorks_Extension extends Twig_Extension
             ]
         ];
     }
+
+    public function getFilters()
+    {
+        return [
+            new Twig_SimpleFilter('currencyExchange', function($price, $rate){
+                return $price / $rate;
+            })
+        ];
+
+    }
 }

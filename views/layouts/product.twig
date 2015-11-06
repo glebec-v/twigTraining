@@ -5,6 +5,25 @@
     </div>
     <div class="span4">
         <p>{{ item.description }}</p>
+
+        <div class="container">
+            <span class="alert-success" style="font-size: x-large">{{ item.price|number_format(
+                decimal=0,
+                decimal_point='.',
+                thousand_sep=' '
+                ) }} UEC</span>
+            <span class="alert-info">{{ item.price|currencyExchange(rate.crey)|number_format(
+                decimal=2,
+                decimal_point='.',
+                thousand_sep=' '
+                ) }} CREY</span>
+            <span class="alert-info">{{ item.price|currencyExchange(rate.taernin)|number_format(
+                decimal=2,
+                decimal_point='.',
+                thousand_sep=' '
+                ) }} Taernin</span>
+        </div>
+        <div class="container" style="margin-top: 30px"></div>
         <a class="btn btn-large btn-primary" href="#">Order now!</a>
     </div>
 </div>
