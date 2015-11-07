@@ -23,7 +23,7 @@
         <div class="divPanel page-content">
             <div class="row-fluid">
                 <h3>Also look at</h3>
-                {% for item in getByTags(item.tags, storage) %}
+                {% for element in getByTags(item.tags, storage) if element != item %}
                     {% include 'element.twig' %}
                 {% endfor %}
             </div>
