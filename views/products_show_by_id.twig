@@ -8,7 +8,11 @@
     <div class="container">
         <div class="divPanel page-content">
             <div class="row-fluid">
-                <h1>{{ item.name }}</h1>
+                <h1>{{ item.name }}
+                    {% if item is recommended %}
+                        <span class="label label-important">Recommended</span>
+                    {% endif %}
+                </h1>
                 <p>Sales started at {{ item.dateProduction | date('d.m.Y') }}</p>
                 <h5>Tags: {{ output.get(item.tags) }}</h5>
                 {% include 'product.twig' %}

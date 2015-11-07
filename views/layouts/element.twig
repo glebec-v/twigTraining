@@ -1,7 +1,12 @@
 {% import 'tags.macro.twig' as output %}
 <div class="span5">
-    <h2>{{ element.name }} {{ element.type }}</h2>
+    <h2>{{ element.name }} {{ element.type }}
+        {% if element is recommended %}
+            <span class="label label-important">Recommended</span>
+        {% endif %}
+    </h2>
     <h5>Tags: {{ output.get(element.tags) }}</h5>
+
     <img class="img-polaroid" src="{{ element.image }}" alt="{{ element.name }}" title="{{ element.name }}"/>
     <p>
         {{ element.description[:100] }}...

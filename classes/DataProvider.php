@@ -147,7 +147,7 @@ class DataProvider
         $ship_325a->tags = ['interdiction', 'Omnisky VI', 'ForceWall', 'Custom weapon system'];
         $ship_325a->dateProduction = date_create('04/07/2942');
         $ship_325a->name = '325a';
-        $ship_325a->price = 449000; // in UEC
+        $ship_325a->price = 375000; // in UEC
         $ship_325a->type = 'interdiction';
         $ship_325a->image = '/views/pics/325a_front-Right_visual.jpg';
         $ship_325a->description = 'It’s a dangerous universe out there. Be the arbiter of your fate with the combat-enhanced ORIGIN 325a. Just because it’s a rough

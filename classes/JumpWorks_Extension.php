@@ -32,13 +32,13 @@ class JumpWorks_Extension extends Twig_Extension
     }
 
     /**
-     * @return коллекцию товаров, где хотя-бы один тэг у каждого товара в коллекции
-     * соответствует хотя-бы одному тегу исходного товара (пересечение множеств тэгов)
+     * возвращает множество товаров, где хотя-бы один тэг у каждого товара в множестве $storage
+     * соответствует хотя-бы одному тегу из массива $tags (пересечение множеств тэгов)
      */
     public function getFunctions()
     {
         return [
-            new Twig_SimpleFunction('getByTags', function($tags, SplObjectStorage $storage){
+            new Twig_SimpleFunction('getByTags', function(array $tags, SplObjectStorage $storage){
                 $outStorage = new SplObjectStorage();
                 foreach ($tags as $tag){
                     $storage->rewind();
@@ -52,6 +52,15 @@ class JumpWorks_Extension extends Twig_Extension
                     }
                 }
                 return $outStorage;
+            })
+        ];
+    }
+
+    public function getTests()
+    {
+        return [
+            new Twig_SimpleTest('recommended', function($item){
+                return $item->price < 400000;
             })
         ];
     }
