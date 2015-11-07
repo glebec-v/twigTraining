@@ -124,7 +124,7 @@ class DataProvider
         $ship_890J = new stdClass();
 
         $ship_300i->id = 1;
-        $ship_300i->tags = ['touring', 'OnePerson', 'Omnisky VI', 'AllStop'];
+        $ship_300i->tags = ['touring', 'AllStop'];
         $ship_300i->dateProduction = date_create('12/23/2941');
         $ship_300i->name = '300i';
         $ship_300i->price = 349000; // in UEC
@@ -134,7 +134,7 @@ class DataProvider
                                     jack-of-all-trades, the 300i is capable of making any role its own and doing so with the class and sophistication
                                      expected of an ORIGIN design. All models feature Gorgon Defender shields and A&R Omnisky VI cannon standard.';
         $ship_315p->id = 2;
-        $ship_315p->tags = ['exploration', 'OnePerson', 'Omnisky VI', 'AllStop', 'JumpEngine', 'JumpScanner'];
+        $ship_315p->tags = ['exploration', 'Omnisky VI', 'JumpEngine', 'JumpScanner'];
         $ship_315p->dateProduction = date_create('01/17/2943');
         $ship_315p->name = '315p';
         $ship_315p->price = 429000; // in UEC
@@ -144,7 +144,7 @@ class DataProvider
                                     the ORIGIN 315p. Featuring a more robust power plant and a custom scanning package, exclusively designed by Chimera
                                      Communications, the 315p is designed for the pilot who wants to go further, to see things that few have seen.';
         $ship_325a->id = 3;
-        $ship_325a->tags = ['interdiction', 'OnePerson', 'Omnisky VI', 'ForceWall', 'Custom weapon system'];
+        $ship_325a->tags = ['interdiction', 'Omnisky VI', 'ForceWall', 'Custom weapon system'];
         $ship_325a->dateProduction = date_create('04/07/2942');
         $ship_325a->name = '325a';
         $ship_325a->price = 449000; // in UEC
@@ -154,7 +154,7 @@ class DataProvider
                                     galaxy doesn’t mean you need to sacrifice your comfort: the 325a can come out on top in any dogfight. The 325a features an
                                      advanced weapon payload as well as a custom targeting system designed especially for the 325a by WillsOp.';
         $ship_M50->id = 4;
-        $ship_M50->tags = ['racing', 'interception', 'OnePerson', 'AllStop FR'];
+        $ship_M50->tags = ['racing', 'interception', 'AllStop'];
         $ship_M50->dateProduction = date_create('11/10/2942');
         $ship_M50->name = 'M50';
         $ship_M50->price = 398000; // in UEC

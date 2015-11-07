@@ -30,4 +30,29 @@ class JumpWorks_Extension extends Twig_Extension
         ];
 
     }
+
+    /**
+     * @return коллекцию товаров, где хотя-бы один тэг у каждого товара в коллекции
+     * соответствует хотя-бы одному тегу исходного товара (пересечение множеств тэгов)
+     */
+    public function getFunctions()
+    {
+        return [
+            new Twig_SimpleFunction('getByTags', function($tags, SplObjectStorage $storage){
+                $outStorage = new SplObjectStorage();
+                foreach ($tags as $tag){
+                    $storage->rewind();
+                    while ($storage->valid()){
+                        foreach ($storage->current()->tags as $currentItemTag) {
+                            if ($currentItemTag == $tag){
+                                $outStorage->attach($storage->current());
+                            }
+                        }
+                        $storage->next();
+                    }
+                }
+                return $outStorage;
+            })
+        ];
+    }
 }
