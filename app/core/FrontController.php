@@ -51,7 +51,7 @@ class FrontController
                 throw new Exception('Missing Interface');
             }
         }else{
-            throw new Exception('Missing Controller');
+            throw new Exception('Missing controller');
         }
 
     }
