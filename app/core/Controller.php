@@ -1,5 +1,9 @@
 <?php
 
+namespace app\core;
+
+use app\models\DataProvider;
+
 abstract class Controller
 {
     protected $twig, $data, $fc;

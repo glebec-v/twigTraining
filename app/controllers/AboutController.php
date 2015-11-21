@@ -1,5 +1,10 @@
 <?php
 
+namespace app\controllers;
+
+use app\core\Controller;
+use app\core\IController;
+
 class AboutController extends Controller implements IController
 {
 

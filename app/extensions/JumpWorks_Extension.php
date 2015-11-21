@@ -1,6 +1,8 @@
 <?php
 
-class JumpWorks_Extension extends Twig_Extension
+namespace app\extensions;
+
+class JumpWorks_Extension extends \Twig_Extension
 {
     public function getName()
     {
@@ -24,7 +26,7 @@ class JumpWorks_Extension extends Twig_Extension
     public function getFilters()
     {
         return [
-            new Twig_SimpleFilter('currencyExchange', function($price, $rate){
+            new \Twig_SimpleFilter('currencyExchange', function($price, $rate){
                 return $price / $rate;
             })
         ];
@@ -38,8 +40,8 @@ class JumpWorks_Extension extends Twig_Extension
     public function getFunctions()
     {
         return [
-            new Twig_SimpleFunction('getByTags', function(array $tags, SplObjectStorage $storage){
-                $outStorage = new SplObjectStorage();
+            new \Twig_SimpleFunction('getByTags', function(array $tags, \SplObjectStorage $storage){
+                $outStorage = new \SplObjectStorage();
                 foreach ($tags as $tag){
                     $storage->rewind();
                     while ($storage->valid()){
@@ -59,7 +61,7 @@ class JumpWorks_Extension extends Twig_Extension
     public function getTests()
     {
         return [
-            new Twig_SimpleTest('recommended', function($item){
+            new \Twig_SimpleTest('recommended', function($item){
                 return $item->price < 400000;
             })
         ];

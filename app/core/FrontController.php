@@ -1,5 +1,7 @@
 <?php
 
+namespace app\core;
+
 class FrontController
 {
     protected $_controller, $_action, $_params, $_body;
@@ -38,25 +40,25 @@ class FrontController
     public function route()
     {
         if (class_exists($this->getController())){
-            $reflection = new ReflectionClass($this->getController());
-            if ($reflection->implementsInterface('IController')){
+            $reflection = new \ReflectionClass($this->getController());
+            if ($reflection->implementsInterface('app\core\IController')){
                 if ($reflection->hasMethod($this->getAction())){
                     $controller = $reflection->newInstance();
                     $method = $reflection->getMethod($this->getAction());
                     $method->invoke($controller);
                 }else{
-                    throw new Exception('Missing Action');
+                    throw new \Exception('Missing Action');
                 }
             }else{
-                throw new Exception('Missing Interface');
+                throw new \Exception('Missing Interface');
             }
         }else{
-            throw new Exception('Missing controller');
+            throw new \Exception('Missing controller');
         }
 
     }
     public function getParams()     { return $this->_params; }
-    public function getController() { return $this->_controller; }
+    public function getController() { return "app\\controllers\\".$this->_controller; }
     public function getAction()     { return $this->_action; }
     public function getBody()       { return $this->_body; }
     public function setBody($body)  { $this->_body = $body; }

@@ -1,5 +1,7 @@
 <?php
 
+namespace app\models;
+
 class DataProvider
 {
     protected $home, $about, $products;
@@ -35,13 +37,13 @@ class DataProvider
 
     protected function __construct()
     {
-        $this->home = new stdClass();
+        $this->home = new \stdClass();
         $this->makeHome();
 
-        $this->about = new stdClass();
+        $this->about = new \stdClass();
         $this->makeAbout();
 
-        $this->products = new SplObjectStorage();
+        $this->products = new \SplObjectStorage();
         $this->makeProduct();
     }
 
@@ -117,11 +119,11 @@ class DataProvider
     }
     protected function makeProduct()
     {
-        $ship_300i = new stdClass();
-        $ship_315p = new stdClass();
-        $ship_325a = new stdClass();
-        $ship_M50 = new stdClass();
-        $ship_890J = new stdClass();
+        $ship_300i = new \stdClass();
+        $ship_315p = new \stdClass();
+        $ship_325a = new \stdClass();
+        $ship_M50 = new \stdClass();
+        $ship_890J = new \stdClass();
 
         $ship_300i->id = 1;
         $ship_300i->tags = ['touring', 'AllStop'];

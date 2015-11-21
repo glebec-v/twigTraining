@@ -1,5 +1,11 @@
 <?php
 
+namespace app\controllers;
+
+use app\core\Controller;
+use app\core\IController;
+
+
 class IndexController extends Controller implements IController
 {
     public function indexAction()
